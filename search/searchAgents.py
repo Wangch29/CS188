@@ -392,7 +392,7 @@ def cornersHeuristic(state: Any, problem: CornersProblem):
 
 
 class AStarCornersAgent(SearchAgent):
-    "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
+    """A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"""
 
     def __init__(self):
         self.searchFunction = lambda prob: search.aStarSearch(prob, cornersHeuristic)
@@ -452,7 +452,7 @@ class FoodSearchProblem:
 
 
 class AStarFoodSearchAgent(SearchAgent):
-    "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
+    """A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"""
 
     def __init__(self):
         self.searchFunction = lambda prob: search.aStarSearch(prob, foodHeuristic)
@@ -493,30 +493,20 @@ def foodHeuristic(state: Tuple[Tuple, List[List]], problem: FoodSearchProblem):
     startPosition, foodGrid = state
     food_list: list = foodGrid.asList()
 
-
-    #distances_to_start = {food: util.manhattanDistance(startPosition, food) for food in food_list}
     distances_to_food = {(f1, f2): util.manhattanDistance(f1, f2) for f1 in food_list for f2 in food_list}
-    #start_max = max(distances_to_start)
     food_max = max(distances_to_food.values())
     a, b = max(distances_to_food, key=distances_to_food.get)
     h = food_max + min(util.manhattanDistance(startPosition, x) for x in (a, b))
     return h
 
-'''
-    for i in range(len(food_list)):
-        d_dict = {food: util.manhattanDistance(position, food) for food in food_list}
-        position = min(d_dict, key=d_dict.get)
-        h += min(d_dict.values())
-        food_list.remove(position)'''
-
 
 class ClosestDotSearchAgent(SearchAgent):
-    "Search for all food using a sequence of searches"
+    """Search for all food using a sequence of searches"""
 
     def registerInitialState(self, state):
         self.actions = []
         currentState = state
-        while (currentState.getFood().count() > 0):
+        while currentState.getFood().count() > 0:
             nextPathSegment = self.findPathToClosestDot(currentState)  # The missing piece
             self.actions += nextPathSegment
             for action in nextPathSegment:

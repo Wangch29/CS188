@@ -1,4 +1,90 @@
-Starting on 1-24 at 0:53:50
+Starting on 1-24 at 2:06:17
+
+Question q1
+===========
+
+Pacman emerges victorious! Score: 1246
+Pacman emerges victorious! Score: 1254
+Pacman emerges victorious! Score: 1243
+Pacman emerges victorious! Score: 1445
+Pacman emerges victorious! Score: 1252
+Pacman emerges victorious! Score: 1247
+Pacman emerges victorious! Score: 1254
+Pacman emerges victorious! Score: 1240
+Pacman emerges victorious! Score: 1258
+Pacman emerges victorious! Score: 1250
+Average Score: 1268.9
+Scores:        1246.0, 1254.0, 1243.0, 1445.0, 1252.0, 1247.0, 1254.0, 1240.0, 1258.0, 1250.0
+Win Rate:      10/10 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win, Win, Win, Win
+*** PASS: test_cases/q1/grade-agent.test (4 of 4 points)
+***     1268.9 average score (2 of 2 points)
+***         Grading scheme:
+***          < 500:  0 points
+***         >= 500:  1 points
+***         >= 1000:  2 points
+***     10 games not timed out (0 of 0 points)
+***         Grading scheme:
+***          < 10:  fail
+***         >= 10:  0 points
+***     10 wins (2 of 2 points)
+***         Grading scheme:
+***          < 1:  fail
+***         >= 1:  0 points
+***         >= 5:  1 points
+***         >= 10:  2 points
+
+### Question q1: 4/4 ###
+
+
+Question q2
+===========
+
+*** PASS: test_cases/q2/0-eval-function-lose-states-1.test
+*** PASS: test_cases/q2/0-eval-function-lose-states-2.test
+*** PASS: test_cases/q2/0-eval-function-win-states-1.test
+*** PASS: test_cases/q2/0-eval-function-win-states-2.test
+*** PASS: test_cases/q2/0-lecture-6-tree.test
+*** PASS: test_cases/q2/0-small-tree.test
+*** PASS: test_cases/q2/1-1-minmax.test
+*** PASS: test_cases/q2/1-2-minmax.test
+*** PASS: test_cases/q2/1-3-minmax.test
+*** PASS: test_cases/q2/1-4-minmax.test
+*** PASS: test_cases/q2/1-5-minmax.test
+*** PASS: test_cases/q2/1-6-minmax.test
+*** PASS: test_cases/q2/1-7-minmax.test
+*** PASS: test_cases/q2/1-8-minmax.test
+*** PASS: test_cases/q2/2-1a-vary-depth.test
+*** PASS: test_cases/q2/2-1b-vary-depth.test
+*** PASS: test_cases/q2/2-2a-vary-depth.test
+*** PASS: test_cases/q2/2-2b-vary-depth.test
+*** PASS: test_cases/q2/2-3a-vary-depth.test
+*** PASS: test_cases/q2/2-3b-vary-depth.test
+*** PASS: test_cases/q2/2-4a-vary-depth.test
+*** PASS: test_cases/q2/2-4b-vary-depth.test
+*** PASS: test_cases/q2/2-one-ghost-3level.test
+*** PASS: test_cases/q2/3-one-ghost-4level.test
+*** PASS: test_cases/q2/4-two-ghosts-3level.test
+*** PASS: test_cases/q2/5-two-ghosts-4level.test
+*** PASS: test_cases/q2/6-tied-root.test
+*** PASS: test_cases/q2/7-1a-check-depth-one-ghost.test
+*** PASS: test_cases/q2/7-1b-check-depth-one-ghost.test
+*** PASS: test_cases/q2/7-1c-check-depth-one-ghost.test
+*** PASS: test_cases/q2/7-2a-check-depth-two-ghosts.test
+*** PASS: test_cases/q2/7-2b-check-depth-two-ghosts.test
+*** PASS: test_cases/q2/7-2c-check-depth-two-ghosts.test
+*** Running MinimaxAgent on smallClassic 1 time(s).
+Pacman died! Score: 84
+Average Score: 84.0
+Scores:        84.0
+Win Rate:      0/1 (0.00)
+Record:        Loss
+*** Finished running MinimaxAgent on smallClassic after 0 seconds.
+*** Won 0 out of 1 games. Average score: 84.000000 ***
+*** PASS: test_cases/q2/8-pacman-game.test
+
+### Question q2: 5/5 ###
+
 
 Question q3
 ===========
@@ -49,13 +135,87 @@ Record:        Loss
 ### Question q3: 5/5 ###
 
 
-Finished at 0:53:50
+Question q4
+===========
+
+*** PASS: test_cases/q4/0-eval-function-lose-states-1.test
+*** PASS: test_cases/q4/0-eval-function-lose-states-2.test
+*** PASS: test_cases/q4/0-eval-function-win-states-1.test
+*** PASS: test_cases/q4/0-eval-function-win-states-2.test
+*** PASS: test_cases/q4/0-expectimax1.test
+*** PASS: test_cases/q4/1-expectimax2.test
+*** PASS: test_cases/q4/2-one-ghost-3level.test
+*** PASS: test_cases/q4/3-one-ghost-4level.test
+*** PASS: test_cases/q4/4-two-ghosts-3level.test
+*** PASS: test_cases/q4/5-two-ghosts-4level.test
+*** PASS: test_cases/q4/6-1a-check-depth-one-ghost.test
+*** PASS: test_cases/q4/6-1b-check-depth-one-ghost.test
+*** PASS: test_cases/q4/6-1c-check-depth-one-ghost.test
+*** PASS: test_cases/q4/6-2a-check-depth-two-ghosts.test
+*** PASS: test_cases/q4/6-2b-check-depth-two-ghosts.test
+*** PASS: test_cases/q4/6-2c-check-depth-two-ghosts.test
+*** Running ExpectimaxAgent on smallClassic 1 time(s).
+Pacman died! Score: 84
+Average Score: 84.0
+Scores:        84.0
+Win Rate:      0/1 (0.00)
+Record:        Loss
+*** Finished running ExpectimaxAgent on smallClassic after 0 seconds.
+*** Won 0 out of 1 games. Average score: 84.000000 ***
+*** PASS: test_cases/q4/7-pacman-game.test
+
+### Question q4: 5/5 ###
+
+
+Question q5
+===========
+
+Pacman emerges victorious! Score: 1316
+Pacman emerges victorious! Score: 1313
+Pacman emerges victorious! Score: 1322
+Pacman emerges victorious! Score: 1333
+Pacman emerges victorious! Score: 1249
+Pacman emerges victorious! Score: 1320
+Pacman emerges victorious! Score: 1226
+Pacman emerges victorious! Score: 1266
+Pacman emerges victorious! Score: 1318
+Pacman emerges victorious! Score: 1296
+Average Score: 1295.9
+Scores:        1316.0, 1313.0, 1322.0, 1333.0, 1249.0, 1320.0, 1226.0, 1266.0, 1318.0, 1296.0
+Win Rate:      10/10 (1.00)
+Record:        Win, Win, Win, Win, Win, Win, Win, Win, Win, Win
+*** PASS: test_cases/q5/grade-agent.test (6 of 6 points)
+***     1295.9 average score (2 of 2 points)
+***         Grading scheme:
+***          < 500:  0 points
+***         >= 500:  1 points
+***         >= 1000:  2 points
+***     10 games not timed out (1 of 1 points)
+***         Grading scheme:
+***          < 0:  fail
+***         >= 0:  0 points
+***         >= 10:  1 points
+***     10 wins (3 of 3 points)
+***         Grading scheme:
+***          < 1:  fail
+***         >= 1:  1 points
+***         >= 5:  2 points
+***         >= 10:  3 points
+
+### Question q5: 6/6 ###
+
+
+Finished at 2:06:21
 
 Provisional grades
 ==================
+Question q1: 4/4
+Question q2: 5/5
 Question q3: 5/5
+Question q4: 5/5
+Question q5: 6/6
 ------------------
-Total: 5/5
+Total: 25/25
 
 Your grades are NOT yet registered.  To register your grades, make sure
 to follow your instructor's guidelines to receive credit on your project.

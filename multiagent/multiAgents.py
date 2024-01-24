@@ -253,7 +253,31 @@ class ExpectimaxAgent(MultiAgentSearchAgent):
         legal moves.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        return self.getActionHelper(gameState, 1, 0)
+
+    def getActionHelper(self, gameState: GameState, depth: int, agentIndex: int):
+        """ Helper function for self.getAction(). """
+        agentNumbers: int = gameState.getNumAgents()
+
+        if depth > self.depth and agentIndex == 0:
+            return self.evaluationFunction(gameState)
+
+        if gameState.isWin() or gameState.isLose():
+            return self.evaluationFunction(gameState)
+
+        next_index: int = (agentIndex + 1) % agentNumbers
+        next_depth: int = depth if next_index != 0 else (depth + 1)
+        action_values = {
+            action: self.getActionHelper(gameState.generateSuccessor(agentIndex, action), next_depth, next_index)
+            for action in gameState.getLegalActions(agentIndex)}
+
+        if agentIndex == 0:
+            if depth == 1:
+                return max(action_values, key=action_values.get)
+            else:
+                return max(action_values.values())
+        else:
+            return sum(action_values.values()) / len(action_values.values())
 
 
 def betterEvaluationFunction(currentGameState: GameState):
@@ -261,10 +285,50 @@ def betterEvaluationFunction(currentGameState: GameState):
     Your extreme ghost-hunting, pellet-nabbing, food-gobbling, unstoppable
     evaluation function (question 5).
 
-    DESCRIPTION: <write something here so we know what you did>
+    DESCRIPTION:
+    The evaluation function has three parts:
+
+    1. The basic currentGameState.getScore(), which is the same as basic evaluation function.
+
+    2. The expectation of remaining food, which is 10 / the distance to pacman.
+
+    3. The expectation of ghost. If the ghost is scared, the value is positive. Otherwise, the value is changing
+       with the distance to pacman. If the distance to pacman is too far, ignore it. (very reasonable)
+
     """
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    # Basic score.
+    score: float = currentGameState.getScore()
+
+    if currentGameState.isWin() or currentGameState.isLose():
+        return score
+
+    position = currentGameState.getPacmanPosition()
+    foods = currentGameState.getFood()
+    foods_list = foods.asList()
+
+    # Food expectation.
+    for food in foods_list:
+        score += 10 / util.manhattanDistance(position, food)
+
+    GhostStates = currentGameState.getGhostStates()
+    ScaredTimes = [ghostState.scaredTimer for ghostState in GhostStates]
+    ghosts_list = currentGameState.getGhostPositions()
+
+    # Ghosts expectation,
+    for i in range(len(ghosts_list)):
+        ghost = ghosts_list[i]
+        d = util.manhattanDistance(position, ghost)
+        if ScaredTimes[i]:
+            score += 500 / d
+        elif d > 10:
+            continue
+        elif d > 5:
+            score -= 100 / d
+        elif d < 3:
+            score -= 500 / d
+
+    return score
 
 
 # Abbreviation

@@ -86,12 +86,12 @@ class QLearningAgent(ReinforcementAgent):
         legal_actions = self.getLegalActions(state)
         if len(legal_actions) == 0:
             return None
-
-        # Haven't seen the state.
-        if self.state_action_qvalue[state] == 0 or len(self.state_action_qvalue[state]) == 0:
-            return random.choice(legal_actions)
-
-        return max(self.state_action_qvalue[state], key=self.state_action_qvalue[state].get)
+        
+        # Excellent!
+        value = self.computeValueFromQValues(state)
+        actions = [action for action in legal_actions
+                   if self.getQValue(state, action) == value]
+        return random.choice(actions)
 
     def getAction(self, state):
         """
